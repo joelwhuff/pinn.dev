@@ -7,7 +7,7 @@ export default {
     mode: 'development',
     entry: './src/js/index.js',
     output: {
-        path: resolve(fileURLToPath(import.meta.url), 'dist'),
+        path: resolve(fileURLToPath(import.meta.url), '../../dist'),
         filename: 'main.js',
         assetModuleFilename: '[name][ext]',
     },
@@ -15,7 +15,7 @@ export default {
         rules: [
             { test: /\.less$/i, use: ['style-loader', 'css-loader', 'less-loader'] },
             {
-                test: /\.(svg|png|jpg|jpeg|gif|ico)$/i,
+                test: /\.(svg|png|jpeg|gif|ico)$/i,
                 type: 'asset/resource',
                 generator: { outputPath: 'assets/images/', publicPath: 'assets/images/' },
             },
@@ -25,7 +25,7 @@ export default {
                 generator: { outputPath: 'assets/fonts/', publicPath: 'assets/fonts/' },
             },
             {
-                test: /\.(mp3|wav|weba)$/i,
+                test: /\.(mp3|wav)$/i,
                 type: 'asset/resource',
                 generator: { outputPath: 'assets/audio/', publicPath: 'assets/audio/' },
             },

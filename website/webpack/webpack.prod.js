@@ -13,7 +13,7 @@ export default {
     mode: 'production',
     entry: './src/js/index.js',
     output: {
-        path: resolve(fileURLToPath(import.meta.url), '../dist'),
+        path: resolve(fileURLToPath(import.meta.url), '../../dist'),
         filename: '[contenthash].js',
         assetModuleFilename: '[hash][ext]',
         clean: true,
@@ -22,7 +22,7 @@ export default {
         rules: [
             { test: /\.less$/i, use: [MiniCssExtractPlugin.loader, 'css-loader', 'less-loader'] },
             {
-                test: /\.(svg|png|jpg|jpeg|gif|ico)$/i,
+                test: /\.(svg|png|jpeg|gif|ico)$/i,
                 type: 'asset/resource',
                 generator: { outputPath: 'assets/images/', publicPath: 'assets/images/' },
             },
@@ -32,7 +32,7 @@ export default {
                 generator: { outputPath: 'assets/fonts/', publicPath: 'assets/fonts/', filename: '[name][ext]' },
             },
             {
-                test: /\.(mp3|wav|weba)$/i,
+                test: /\.(mp3|wav)$/i,
                 type: 'asset/resource',
                 generator: { outputPath: 'assets/audio/', publicPath: 'assets/audio/' },
             },
